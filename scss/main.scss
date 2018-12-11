@@ -1,0 +1,221 @@
+@import "reset";
+@import "fonts";
+@import "extends";
+
+$back_1: #e9e8e4;
+$back_2: #ffffff;
+
+$font_1: #727272;
+$font_2: #303030;
+$font_3: #97a4b1;
+$font_4: #667a90;
+
+$acent :#4d75a3;
+$acent_2 :#41638a;
+$acent_3 :#a6bad1;
+$acent_4 :#ff6161;
+
+
+body {
+    font-family: "OpenSans", "Arial", sans-serif;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 18px;
+    background: $back_1;
+    color: $font_1;
+
+    padding-top: 120px;
+    padding-bottom: 120px;
+}
+
+.wrapper {
+    margin: 0 auto;
+    min-width: 360px;
+    max-width: 1150px;
+    width: 100%;
+}
+
+.header {
+    @extend %shadow;
+    @extend %block_radius;
+
+    width: 100%;
+
+    .header_top {
+        background: $acent;
+        display: flex;
+        align-items: stretch;
+        lex-direction: row;
+
+        a {
+            @extend %animation;
+
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            padding-left: 25px;
+            padding-right: 25px;
+            border-right: 1px solid $acent_2;
+
+            &:hover {
+                background: $acent - 5;
+            }
+
+            &.active:hover:before {
+                border: 1px solid $acent - 5;
+            }
+        }
+
+        .header_logo {
+            padding-right: 50px !important;
+
+            svg {
+                width: 100px;
+                height: 14px;
+
+                path {
+                    fill: $back_2;
+                    
+                }
+            }
+        }
+
+        .header_bell,
+        .header_friends,
+        .header_message,
+        .header_search,
+        .header_exit {
+
+            position: relative;
+
+            svg {
+                width: 20px;
+                height: 20px;
+
+                path {
+                    fill: $acent_3;
+                }
+            }
+
+            &.active {
+                svg path {
+                    fill: $back_2;
+                }
+            }
+
+            &.active:before {
+                @extend %animation;
+                content: '1';
+                display: block;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                min-width: 14px;
+                border-radius: 2px;
+                transform: translate(0px, -15px);
+                color: $back_2;
+                background: $acent_4;
+                padding: 2px 3px;
+                font-size: 9px;
+                line-height: 9px;
+                text-align: center;
+                border: 1px solid $acent;
+
+            }
+        }
+    }
+
+    .header_profile {
+        display: flex;
+        align-items: stretch;
+        justify-content: flex-end;
+        width: 100%;
+        border-right: 1px solid $acent_2;
+        color: $back_2;
+
+        .header_button {
+            display: flex;
+            align-items: center;
+            padding-left: 25px;
+            padding-right: 25px;
+            cursor: pointer;
+
+            &:hover {
+                background: $acent - 5;
+            }
+        }
+
+        .header_avatar {
+            width: 25px;
+            height: 25px;
+            margin-left: 20px;
+            margin-right: 10px;
+
+            path {
+                fill: $back_2;
+            }
+        }
+
+        .header_dropdownmenu {
+            width: 7px;
+
+            polygon {
+                fill: $back_2;
+            }
+        }
+    }
+
+        
+
+    .header_menu {
+        background: $back_2;
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+        lex-direction: row;
+        
+
+        a {
+            @extend %animation;
+
+            display: flex;
+            align-items: center;
+            position: relative;
+            text-decoration: none;
+            color: $font_3;
+            font-size: 18px;
+            margin-right: 50px;
+
+            &:hover {
+                color: $font_3 - 20;
+            }
+
+            &:last-child {
+                margin-right: 0;
+            }
+
+            &.active {
+                font-weight: 600;
+                color: $font_4;
+
+                &:after {
+                    content: '';
+                    display: block;
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 5px;
+                    background: $acent;
+                }
+            }
+        }
+    }
+
+    .header_top,
+    .header_menu {
+        width: 100%;
+        height: 75px;
+    }
+}
