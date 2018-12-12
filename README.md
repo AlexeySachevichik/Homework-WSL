@@ -1,4 +1,4 @@
-# Homework-WSL [view](https://verespro.github.io/Homework-WSL/)
+# Homework-WSL [View CitHub Page](https://verespro.github.io/Homework-WSL/)
 
 Web School Lectures 01 HTML+CSS Homework
 
