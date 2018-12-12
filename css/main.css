@@ -101,7 +101,7 @@ html {
 
 .header, .button, .profile, .container .activity_feed,
 .container .suggestions,
-.container .chat, .container .activity_feed .content .item .description .image a, .container .activity_feed .content .item .description .link .image_link {
+.container .chat, .container .activity_feed .content .item .description .image a, .container .activity_feed .content .item .description .link .image_link, .container .suggestions .content .item .user_add .add {
   border-radius: 5px;
   overflow: hidden;
 }
@@ -111,7 +111,7 @@ html {
 .header .header_top .header_message.active:before,
 .header .header_top .header_search.active:before,
 .header .header_top .header_exit.active:before, .header .header_menu a, .button, .container .activity_feed .show_more,
-.container .suggestions .show_more, .container .activity_feed .settings {
+.container .suggestions .show_more, .container .activity_feed .settings, .container .suggestions .content .item .user_add .add {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
@@ -460,7 +460,7 @@ h2 {
 .container .activity_feed,
 .container .suggestions {
   position: relative;
-  padding-bottom: 75px;
+  padding-bottom: 60px;
 }
 .container .activity_feed h2,
 .container .suggestions h2 {
@@ -594,6 +594,82 @@ h2 {
   width: 100%;
   padding-left: 20px;
   padding-right: 25px;
+}
+.container .suggestions .content .item {
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.container .suggestions .content .item .user_logo {
+  position: relative;
+  margin-right: 20px;
+}
+.container .suggestions .content .item .user_logo a {
+  display: block;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.container .suggestions .content .item .user_logo a img {
+  display: block;
+}
+.container .suggestions .content .item .user_logo .online {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 3px solid #ffffff;
+  background: #00d905;
+}
+.container .suggestions .content .item .user_name {
+  width: 100%;
+}
+.container .suggestions .content .item .user_name p {
+  color: #97a4b1;
+}
+.container .suggestions .content .item .user_name p.name {
+  position: relative;
+  margin-bottom: 3px;
+  display: inline-block;
+}
+.container .suggestions .content .item .user_name p.name a {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3f4f5f;
+  text-decoration: none;
+}
+.container .suggestions .content .item .user_name p.name .mobile {
+  position: absolute;
+  top: 5px;
+  right: -15px;
+  width: 10px;
+  height: 10px;
+}
+.container .suggestions .content .item .user_name p.name .mobile path {
+  /*fill: $acent_9;*/
+  fill: #97a4b1;
+}
+.container .suggestions .content .item .user_add .add {
+  display: block;
+  width: 50px;
+  padding: 5px 0;
+  text-align: center;
+  text-decoration: none;
+  border: 1px solid #97a4b1;
+  color: #97a4b1;
+  font-size: 12px;
+  background: #ffffff;
+}
+.container .suggestions .content .item .user_add .add:hover {
+  background: #fafafa;
 }
 .container .chat {
   width: 30.4%;

@@ -22,6 +22,8 @@ $acent_4: #ff6161;
 $acent_5: #3f4f5f;
 $acent_6: #667a90;
 $acent_7: #7595b9;
+$acent_8: #00d905;
+$acent_9: #bac2cb;
 
 
 body {
@@ -377,7 +379,7 @@ h2 {
     .activity_feed,
     .suggestions {
         position: relative;
-        padding-bottom: 75px;
+        padding-bottom: 60px;
 
         h2 {
             margin: 30px 25px 40px 25px;
@@ -537,6 +539,94 @@ h2 {
             width: 100%;
             padding-left: 20px;
             padding-right: 25px;
+
+            .item {
+                margin-bottom: 20px;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .user_logo {
+                    position: relative;
+                    margin-right: 20px;
+
+                    a {
+                        display: block;
+                        border-radius: 50%;
+                        overflow: hidden;
+
+                        img {
+                            display: block;
+                        }
+                    }
+
+                    .online {
+                        position: absolute;
+                        bottom: 1px;
+                        right: 1px;
+                        width: 14px;
+                        height: 14px;
+                        border-radius: 50%;
+                        border: 3px solid $back_2;
+                        background: $acent_8;
+                    }
+                }
+
+                .user_name {
+                    width: 100%;
+
+                    p {
+                        color: $font_3;
+
+                        &.name {
+                            position: relative;
+                            margin-bottom: 3px;
+                            display: inline-block;
+
+                            a {
+                                font-size: 16px;
+                                font-weight: 600;
+                                color: $acent_5;
+                                text-decoration: none;
+                            }
+
+                            .mobile {
+                                position: absolute;
+                                top: 5px;
+                                right: -15px;
+                                width: 10px;
+                                height: 10px; 
+
+                                path {
+                                    /*fill: $acent_9;*/
+                                    fill: $font_3;
+                                }
+                            }
+                        }
+                    }
+                }
+
+                .user_add {
+                    .add {
+                        @extend %block_radius;
+                        @extend %animation;
+
+                        display: block;
+                        width: 50px;
+                        padding: 5px 0;
+                        text-align: center;
+                        text-decoration: none;
+                        border: 1px solid $font_3;
+                        color: $font_3;
+                        font-size: 12px;
+                        background: $back_2;
+
+                        &:hover {
+                            background: $back_2 - 5;
+                        }
+                    }
+                }
+            }
         }
     }
 
