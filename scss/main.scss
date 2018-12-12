@@ -4,16 +4,19 @@
 
 $back_1: #e9e8e4;
 $back_2: #ffffff;
+$back_3: #e5e5e5;
 
 $font_1: #727272;
 $font_2: #303030;
 $font_3: #97a4b1;
 $font_4: #667a90;
 
-$acent :#4d75a3;
-$acent_2 :#41638a;
-$acent_3 :#a6bad1;
-$acent_4 :#ff6161;
+$acent: #4d75a3;
+$acent_2: #41638a;
+$acent_3: #a6bad1;
+$acent_4: #ff6161;
+$acent_5: #3f4f5f;
+$acent_6: #667a90;
 
 
 body {
@@ -105,6 +108,7 @@ body {
 
             &.active:before {
                 @extend %animation;
+
                 content: '1';
                 display: block;
                 position: absolute;
@@ -218,4 +222,133 @@ body {
         width: 100%;
         height: 75px;
     }
+}
+
+.button {
+    @extend %block_radius;
+    @extend %animation;
+
+    display: block;
+    width: 180px;
+    margin-bottom: 10px;
+    padding: 14px 0;
+    border: 2px solid $acent;
+
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    color: $back_2;
+    background: $acent;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    &.lite {
+        color: $acent;
+        background: $back_2;
+    }
+
+    &:hover {
+        background: $acent - 10;
+    }
+
+    &.lite:hover {
+        background: $back_2 - 5;
+    }
+
+}
+
+.profile {
+    @extend %shadow;
+    @extend %block_radius;
+
+    margin: 50px 0;
+    padding: 45px 50px;
+    background: $back_2;
+
+    display: flex;
+    lex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+
+    .profile_avatar {
+        margin-right: 20px;
+
+        img {
+            display: block;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+    }
+
+    .profile_title {
+        display: flex;
+        align-items: center;
+        height: 100px;
+        border-right: 1px solid $back_3;
+        padding-right: 30px;
+
+       .name {
+            position: relative;
+            display: inline-block;
+            font-size: 24px;
+            color: $acent_5;
+            margin-bottom: 14px;
+        }
+
+        .verification {
+            position: absolute;
+            top: 3px;
+            right: -23px;
+            width: 15px;
+            height: 15px;
+
+
+            svg {
+                display: block;
+                width: 15px;
+                height: 15px;
+
+                path {
+                    fill: $acent_3;
+                }
+            }
+        }
+
+        .description {
+            line-height: 24px;
+            color: $acent_6;
+        }
+    }
+
+    .profile_status {
+        display: flex;
+        lex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+        margin-left: 35px;
+
+        .item {
+            margin-right: 50px;
+
+            .title {
+                margin-bottom: 10px;
+                font-size: 24px;
+                font-weight: 600;
+                color: $acent;
+            }
+            .description {
+                color: $acent_6;
+            }
+        }
+    }
+
+    .profile_button {
+        margin-left: 5px;
+    }
+
+    
+
 }
