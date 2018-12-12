@@ -67,13 +67,14 @@ h2{font-size:24px;font-weight:300;color:#000}
 .profile .profile_button{margin-left:5px}
 .container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .container .activity_feed,.container .chat,.container .suggestions{background:#fff}
+.container .activity_feed,.container .suggestions{position:relative;padding-bottom:75px}
 .container .activity_feed h2,.container .suggestions h2{margin:30px 25px 40px 25px}
-.container .activity_feed .show_more,.container .suggestions .show_more{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:20px 0;text-decoration:none;color:#7595b9;background:#ebf4fa}
+.container .activity_feed .show_more,.container .suggestions .show_more{position:absolute;bottom:0;left:0;right:0;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:center;-ms-flex-pack:center;justify-content:center;padding:20px 0;text-decoration:none;text-transform:uppercase;color:#7595b9;background:#ebf4fa}
 .container .activity_feed .show_more:hover,.container .suggestions .show_more:hover{background:#e1eaf0}
 .container .activity_feed .show_more .title,.container .suggestions .show_more .title{position:relative}
-.container .activity_feed .show_more .title svg,.container .suggestions .show_more .title svg{position:absolute;top:7px;right:-20px;width:7px}
+.container .activity_feed .show_more .title svg,.container .suggestions .show_more .title svg{position:absolute;top:6px;right:-20px;width:7px}
 .container .activity_feed .show_more .title svg polygon,.container .suggestions .show_more .title svg polygon{fill:#7595b9}
-.container .activity_feed{width:32.6%;position:relative}
+.container .activity_feed{width:32.6%}
 .container .activity_feed .settings{position:absolute;top:30px;right:20px;cursor:pointer}
 .container .activity_feed .settings svg{width:15px;height:15px}
 .container .activity_feed .settings svg path{fill:#a6a6a6}
@@ -94,4 +95,5 @@ h2{font-size:24px;font-weight:300;color:#000}
 .container .activity_feed .content .item .description .link .image_link{display:block;position:absolute;top:0;left:15px}
 .container .activity_feed .content .item .description .link .image_link img{display:block}
 .container .suggestions{width:28.2%}
+.container .suggestions .content{width:100%;padding-left:20px;padding-right:25px}
 .container .chat{width:30.4%}
