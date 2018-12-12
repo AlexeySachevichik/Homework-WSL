@@ -15,7 +15,7 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box;-ms-overflow-style:scro
 @font-face{font-family:OpenSans;font-style:normal;font-weight:600;src:url(../fonts/OpenSans-SemiBold.ttf) format("truetype")}
 .container .activity_feed,.container .chat,.container .suggestions,.header,.profile{-webkit-box-shadow:0 2px 4px rgba(0,0,0,.1);box-shadow:0 2px 4px rgba(0,0,0,.1)}
 .button,.container .activity_feed,.container .activity_feed .content .item .description .image a,.container .activity_feed .content .item .description .link .image_link,.container .chat,.container .suggestions,.container .suggestions .content .item .user_add .add,.header,.profile{border-radius:5px;overflow:hidden}
-.button,.container .activity_feed .settings,.container .activity_feed .show_more,.container .suggestions .content .item .user_add .add,.container .suggestions .show_more,.header .header_menu a,.header .header_top .header_bell.active:before,.header .header_top .header_exit.active:before,.header .header_top .header_friends.active:before,.header .header_top .header_message.active:before,.header .header_top .header_search.active:before,.header .header_top a{-webkit-transition-duration:.2s;transition-duration:.2s}
+.button,.container .activity_feed .settings,.container .activity_feed .show_more,.container .suggestions .content .item .user_add .add,.container .suggestions .show_more,.header .header_menu a,.header .header_top .header_bell .notice,.header .header_top .header_exit .notice,.header .header_top .header_friends .notice,.header .header_top .header_message .notice,.header .header_top .header_search .notice,.header .header_top a{-webkit-transition-duration:.2s;transition-duration:.2s}
 body{font-family:OpenSans,Arial,sans-serif;font-size:14px;font-weight:400;line-height:18px;background:#e9e8e4;color:#727272;padding-top:120px;padding-bottom:120px}
 h2{font-size:24px;font-weight:300;color:#000}
 .wrapper{margin:0 auto;min-width:360px;max-width:1150px;width:100%}
@@ -23,15 +23,15 @@ h2{font-size:24px;font-weight:300;color:#000}
 .header .header_top{background:#4d75a3;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;lex-direction:row}
 .header .header_top a{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;text-decoration:none;padding-left:25px;padding-right:25px;border-right:1px solid #41638a}
 .header .header_top a:hover{background:#48709e}
-.header .header_top a.active:hover:before{border:1px solid #48709e}
+.header .header_top a:hover .notice{border:1px solid #48709e}
 .header .header_top .header_logo{padding-right:50px!important}
 .header .header_top .header_logo svg{width:100px;height:14px}
 .header .header_top .header_logo svg path{fill:#fff}
 .header .header_top .header_bell,.header .header_top .header_exit,.header .header_top .header_friends,.header .header_top .header_message,.header .header_top .header_search{position:relative}
 .header .header_top .header_bell svg,.header .header_top .header_exit svg,.header .header_top .header_friends svg,.header .header_top .header_message svg,.header .header_top .header_search svg{width:20px;height:20px}
 .header .header_top .header_bell svg path,.header .header_top .header_exit svg path,.header .header_top .header_friends svg path,.header .header_top .header_message svg path,.header .header_top .header_search svg path{fill:#a6bad1}
+.header .header_top .header_bell .notice,.header .header_top .header_exit .notice,.header .header_top .header_friends .notice,.header .header_top .header_message .notice,.header .header_top .header_search .notice{position:absolute;top:50%;left:50%;-webkit-transform:translate(0,-15px);transform:translate(0,-15px);min-width:14px;border-radius:2px;font-size:9px;line-height:9px;text-align:center;border-radius:2px;border:1px solid #4d75a3;color:#fff;background:#ff6161;padding:2px 3px}
 .header .header_top .header_bell.active svg path,.header .header_top .header_exit.active svg path,.header .header_top .header_friends.active svg path,.header .header_top .header_message.active svg path,.header .header_top .header_search.active svg path{fill:#fff}
-.header .header_top .header_bell.active:before,.header .header_top .header_exit.active:before,.header .header_top .header_friends.active:before,.header .header_top .header_message.active:before,.header .header_top .header_search.active:before{content:'1';display:block;position:absolute;top:50%;left:50%;min-width:14px;border-radius:2px;-webkit-transform:translate(0,-15px);transform:translate(0,-15px);color:#fff;background:#ff6161;padding:2px 3px;font-size:9px;line-height:9px;text-align:center;border:1px solid #4d75a3}
 .header .header_profile{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:stretch;-ms-flex-align:stretch;align-items:stretch;-webkit-box-pack:end;-ms-flex-pack:end;justify-content:flex-end;width:100%;border-right:1px solid #41638a;color:#fff}
 .header .header_profile .header_button{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;padding-left:25px;padding-right:25px;cursor:pointer}
 .header .header_profile .header_button:hover{background:#48709e}
@@ -53,7 +53,7 @@ h2{font-size:24px;font-weight:300;color:#000}
 .button.lite:hover{background:#fafafa}
 .profile{margin:50px 0;padding:45px 50px;background:#fff;display:-webkit-box;display:-ms-flexbox;display:flex;lex-direction:row;-webkit-box-align:center;-ms-flex-align:center;align-items:center;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
 .profile .profile_avatar{margin-right:20px}
-.profile .profile_avatar img{display:block;border-radius:50%;overflow:hidden}
+.profile .profile_avatar img{display:block;width:100px;height:100px;border-radius:50%;overflow:hidden}
 .profile .profile_title{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center;height:100px;border-right:1px solid #e5e5e5;padding-right:30px}
 .profile .profile_title .name{position:relative;display:inline-block;font-size:24px;color:#3f4f5f;margin-bottom:14px}
 .profile .profile_title .verification{position:absolute;top:3px;right:-23px;width:15px;height:15px}
@@ -90,16 +90,16 @@ h2{font-size:24px;font-weight:300;color:#000}
 .container .activity_feed .content .item .description .image{margin-top:10px}
 .container .activity_feed .content .item .description .image a{display:inline-block;margin-right:4px}
 .container .activity_feed .content .item .description .image a:last-child{margin-right:0}
-.container .activity_feed .content .item .description .image a img{display:block}
+.container .activity_feed .content .item .description .image a img{display:block;width:50px;height:50px}
 .container .activity_feed .content .item .description .link{position:relative;min-height:50px;margin-top:10px;padding-left:80px;border-left:2px solid #4d75a3}
 .container .activity_feed .content .item .description .link .image_link{display:block;position:absolute;top:0;left:15px}
-.container .activity_feed .content .item .description .link .image_link img{display:block}
+.container .activity_feed .content .item .description .link .image_link img{display:block;width:50px;height:50px}
 .container .suggestions{width:28.2%}
 .container .suggestions .content{width:100%;padding-left:20px;padding-right:25px}
 .container .suggestions .content .item{margin-bottom:20px;display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
 .container .suggestions .content .item .user_logo{position:relative;margin-right:20px}
 .container .suggestions .content .item .user_logo a{display:block;border-radius:50%;overflow:hidden}
-.container .suggestions .content .item .user_logo a img{display:block}
+.container .suggestions .content .item .user_logo a img{display:block;width:50px;height:50px}
 .container .suggestions .content .item .user_logo .online{position:absolute;bottom:1px;right:1px;width:14px;height:14px;border-radius:50%;border:3px solid #fff;background:#00d905}
 .container .suggestions .content .item .user_name{width:100%}
 .container .suggestions .content .item .user_name p{color:#97a4b1}
