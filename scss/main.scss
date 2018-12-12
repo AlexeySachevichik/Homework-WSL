@@ -5,11 +5,15 @@
 $back_1: #e9e8e4;
 $back_2: #ffffff;
 $back_3: #e5e5e5;
+$back_4: #a6a6a6;
+$back_5: #e0e0e0;
+$back_6: #ebf4fa;
 
 $font_1: #727272;
 $font_2: #303030;
 $font_3: #97a4b1;
 $font_4: #667a90;
+$font_5: #000000;
 
 $acent: #4d75a3;
 $acent_2: #41638a;
@@ -17,6 +21,7 @@ $acent_3: #a6bad1;
 $acent_4: #ff6161;
 $acent_5: #3f4f5f;
 $acent_6: #667a90;
+$acent_7: #7595b9;
 
 
 body {
@@ -29,6 +34,12 @@ body {
 
     padding-top: 120px;
     padding-bottom: 120px;
+}
+
+h2 {
+    font-size: 24px;
+    font-weight: 300;
+    color: $font_5;
 }
 
 .wrapper {
@@ -348,7 +359,176 @@ body {
     .profile_button {
         margin-left: 5px;
     }
+}
 
-    
+.container {
+    display: flex;
+    justify-content: space-between;
 
+    .activity_feed,
+    .suggestions,
+    .chat {
+        @extend %shadow;
+        @extend %block_radius;
+
+        background: $back_2;
+    }
+
+    .activity_feed,
+    .suggestions {
+
+        h2 {
+            margin: 30px 25px 40px 25px;
+        }
+
+        .show_more {
+            @extend %animation;
+
+            display: flex;
+            justify-content: center;
+            padding: 20px 0px;
+            text-decoration: none;
+            color: $acent_7;
+            background: $back_6;
+
+            &:hover {
+                background: $back_6 - 10;
+            }
+
+            .title {
+                position: relative;
+
+                svg {
+                    position: absolute;
+                    top: 7px;
+                    right: -20px;
+                    width: 7px;
+
+                    polygon {
+                        fill: $acent_7;
+                    }
+                }
+            }
+        }
+    }
+
+    .activity_feed {
+        width: 32.6%;
+        position: relative;
+
+        .settings {
+            @extend %animation;
+            position: absolute;
+            top: 30px;
+            right: 20px;
+            cursor: pointer;
+
+            svg {
+                width: 15px;
+                height: 15px;
+
+                path {
+                    fill: $back_4;
+                }
+            }
+
+            &:hover {
+                svg path {
+                    fill: $back_4 - 10;
+                }
+            }
+        }
+
+        .content {
+            padding: 0 25px;
+
+            .item {
+                position: relative;
+                padding-left: 40px;
+                /*padding-bottom: 5px;*/
+                margin-bottom: 15px;
+
+                a {
+                    color: $acent;
+                    text-decoration: none;
+                }
+
+                .icons {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+
+                    svg {
+                        width: 20px;
+                        height: 20px;
+
+                        path {
+                            fill: $back_4;
+                        }
+                    }
+                }
+
+                .line {
+                    position: absolute;
+                    top: 30px;
+                    left: 10px;
+                    bottom: 0;
+                    width: 1px;
+                    background: $back_5; 
+                }
+
+                .title {
+                    margin-bottom: 4px;
+                }
+
+                .description {
+                    .image {
+                        margin-top: 10px;
+                        
+                        a {
+                            @extend %block_radius;
+                            display: inline-block;
+                            margin-right: 4px;
+
+                            &:last-child {
+                                margin-right: 0;
+                            }
+
+                            img {
+                                display: block;
+                            }
+                        }
+                    }
+
+                    .link {
+                        position: relative;
+                        min-height: 50px;
+                        margin-top: 10px;
+                        padding-left: 80px;
+                        border-left: 2px solid $acent;
+
+                        .image_link {
+                            @extend %block_radius;
+                            display: block;
+                            position: absolute;
+                            top: 0;
+                            left: 15px;
+
+                            img {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .suggestions {
+        width: 28.2%;
+    }
+
+    .chat {
+        width: 30.4%;
+    }
 }
