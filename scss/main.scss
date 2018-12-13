@@ -16,6 +16,7 @@ $font_2: #303030;
 $font_3: #97a4b1;
 $font_4: #667a90;
 $font_5: #000000;
+$font_6: #777777;
 
 $acent: #4d75a3;
 $acent_2: #41638a;
@@ -29,6 +30,7 @@ $acent_9: #bac2cb;
 $acent_10: #8f9dae;
 $acent_11: #bcccdc;
 $acent_12: #f2f4f6;
+$acent_13: #2b587a;
 
 
 body {
@@ -1094,6 +1096,189 @@ h2 {
     }
 
     .messages {
+        position: relative;
         width: 70%;
+
+        .messages_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            padding: 0 25px;
+            border-bottom: 1px solid $back_3;
+            background: rgba(255,255,255,0.95);
+
+            .avatar {
+                margin-right: 8px;
+
+                img {
+                    display: block;
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                }
+            }
+
+            .user {
+                
+                margin-right: auto;
+                
+                .name {
+                    margin-bottom: 3px;
+                    font-size: 16px;
+                    font-weight: 600;
+                    color: $acent_5;
+                }
+
+                .status {
+                    display: flex;
+                    align-items: center;
+                    color: $font_6;
+
+                    .mobile {
+                        width: 10px;
+                        height: 10px;
+                        margin-right: 4px;
+
+                        svg {
+                            display: block;
+                            width: 100%;
+                            height: 100%;
+
+                            path {
+                                fill: $font_6;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .add_friend,
+            .settings {
+                margin-right: 15px;
+            }
+
+            .add_friend,
+            .settings,
+            .exit {
+                cursor: pointer;
+                width: 15px;
+                height: 15px;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+
+                    path {
+                        @extend %animation;
+                        fill: $acent_3;
+                    }
+                }
+
+                &:hover svg path {
+                    fill: $acent_3 - 10;
+                }
+            }
+
+            .exit svg {
+                width: 80%;
+                height: 80%;
+            }
+        }
+
+        .messages_form {
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            padding: 25px 20px 20px 20px;
+            background: $acent_12;
+            border-top: 1px solid $back_3;
+
+            .form_input {
+                width: 100%;
+
+                input {
+                    @extend %block_radius;
+                    display: block;
+                    width: 100%;
+                    height: 50px;
+                    padding: 15px;
+                    margin-bottom: 10px;
+                    border: 1px solid $back_3;
+                    font-size: 16px;
+                    color: $font_1;
+                }
+
+                .input_menu {
+                    display: flex;
+                    justify-content: space-between;
+
+                    .smile {
+                        width: 18px;
+                        height: 18px;
+                        cursor: pointer;
+                        margin-right: 13px;
+
+                        svg {
+                            width: 100%;
+                            height: 100%;
+
+                            path {
+                                fill: $acent_3;
+                            }
+                        }
+                    }
+
+                    .last_smile {
+                        display: flex;
+                        border-left: 1px solid $back_3;
+                        padding-left: 13px;
+                        
+                        img {
+                            cursor: pointer;
+                            display: block;
+                            width: 18px;
+                            height: 18px;
+                            margin-right: 10px;
+                        }
+                    }
+
+                    .attach {
+                        position: relative;
+                        margin-left: auto;
+                        color: $acent_13;
+                        cursor: pointer;
+                        padding-right: 15px;
+
+                        svg {
+                            position: absolute;
+                            top: 5px;
+                            right: 0;
+                            width: 8px;
+
+                            polygon {
+                                fill: $acent_3;
+                            }
+                        }
+                    }
+                }
+            }
+
+            .form_send {
+                margin-left: 15px;
+                a.button {
+                    width: 120px;
+                }
+            }
+        }
     }
 }
