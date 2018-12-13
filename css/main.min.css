@@ -173,7 +173,7 @@ h2{font-size:24px;font-weight:300;color:#000}
 .dialoges .dialoges_list .dialoges_users .item .info .date{color:#b1b1b1;margin-bottom:10px}
 .dialoges .dialoges_list .dialoges_users .item .info .count_mes{display:inline-block;float:right;min-width:23px;height:23px;padding:0 5px;background:#7595b9;color:#fff;font-size:12px;font-weight:900;line-height:23px;text-align:center;border-radius:2px}
 .dialoges .messages{position:relative;width:70%}
-.dialoges .messages .messages_header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:absolute;top:0;left:0;right:0;width:100%;height:100px;padding:0 25px;border-bottom:1px solid #e5e5e5;background:rgba(255,255,255,.95)}
+.dialoges .messages .messages_header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:absolute;top:0;left:0;right:0;width:100%;height:100px;padding:0 25px;border-bottom:1px solid #e5e5e5;background:rgba(255,255,255,.9)}
 .dialoges .messages .messages_header .avatar{margin-right:8px}
 .dialoges .messages .messages_header .avatar img{display:block;width:50px;height:50px;border-radius:50%}
 .dialoges .messages .messages_header .user{margin-right:auto}
@@ -202,3 +202,18 @@ h2{font-size:24px;font-weight:300;color:#000}
 .dialoges .messages .messages_form .form_input .input_menu .attach svg polygon{fill:#a6bad1}
 .dialoges .messages .messages_form .form_send{margin-left:15px}
 .dialoges .messages .messages_form .form_send a.button{width:120px}
+.dialoges .messages .messages_user .item{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-orient:horizontal;-webkit-box-direction:normal;-ms-flex-direction:row;flex-direction:row;-webkit-box-align:end;-ms-flex-align:end;align-items:flex-end;margin:15px 20px 35px 20px}
+.dialoges .messages .messages_user .item.left .mes{background:#f2f4f6}
+.dialoges .messages .messages_user .item.left .mes .date{left:0}
+.dialoges .messages .messages_user .item.left .mes:before{content:'';display:block;position:absolute;bottom:0;left:-15px;width:0;height:0;border-bottom:30px solid #f2f4f6;border-left:30px solid transparent}
+.dialoges .messages .messages_user .item.left .avatar{margin-right:15px}
+.dialoges .messages .messages_user .item.right{-webkit-box-orient:horizontal;-webkit-box-direction:reverse;-ms-flex-direction:row-reverse;flex-direction:row-reverse}
+.dialoges .messages .messages_user .item.right .mes{background:#ebf4fa}
+.dialoges .messages .messages_user .item.right .mes .date{right:0}
+.dialoges .messages .messages_user .item.right .mes:before{content:'';display:block;position:absolute;bottom:0;right:-15px;width:0;height:0;border-bottom:30px solid #ebf4fa;border-right:30px solid transparent}
+.dialoges .messages .messages_user .item.right .avatar{margin-left:15px}
+.dialoges .messages .messages_user .item .avatar img{display:block;width:50px;height:50px;border-radius:50%}
+.dialoges .messages .messages_user .item .mes{position:relative;max-width:70%;padding:15px;border-radius:10px;color:#667a90;line-height:22px}
+.dialoges .messages .messages_user .item .mes img{display:inline-block;width:150px;height:150px;margin-right:8px;border-radius:3px}
+.dialoges .messages .messages_user .item .mes img:last-child{margin-right:0}
+.dialoges .messages .messages_user .item .mes .date{position:absolute;bottom:-23px;font-size:12px;color:#b1b1b1}
