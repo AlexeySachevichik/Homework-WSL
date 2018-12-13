@@ -92,16 +92,22 @@ html {
   font-weight: 600;
   src: url("../fonts/OpenSans-SemiBold.ttf") format("truetype");
 }
+@font-face {
+  font-family: "OpenSans";
+  font-style: normal;
+  font-weight: 900;
+  src: url("../fonts/OpenSans-Bold.ttf") format("truetype");
+}
 .header, .profile, .container .activity_feed,
 .container .suggestions,
-.container .chat {
+.container .chat, .dialoges {
   -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
           box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .header, .button, .profile, .container .activity_feed,
 .container .suggestions,
-.container .chat, .container .activity_feed .content .item .description .image a, .container .activity_feed .content .item .description .link .image_link, .container .suggestions .content .item .user_add .add {
+.container .chat, .container .activity_feed .content .item .description .image a, .container .activity_feed .content .item .description .link .image_link, .container .suggestions .content .item .user_add .add, .dialoges, .dialoges .messages .messages_form .form_input input {
   border-radius: 5px;
   overflow: hidden;
 }
@@ -114,7 +120,11 @@ html {
 .container .suggestions .show_more, .container .activity_feed .settings svg path, .container .suggestions .content .item .user_add .add, .container .chat .chat_header .settings svg path,
 .container .chat .chat_header .resize svg path,
 .container .chat .chat_header .exit svg path, .container .chat .form .attached_file,
-.container .chat .form .smile {
+.container .chat .form .smile, .dialoges .dialoges_list .dialoges_header .search svg path,
+.dialoges .dialoges_list .dialoges_header .volume svg path,
+.dialoges .dialoges_list .dialoges_header .notview svg path, .dialoges .messages .messages_header .add_friend svg path,
+.dialoges .messages .messages_header .settings svg path,
+.dialoges .messages .messages_header .exit svg path {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
@@ -455,6 +465,7 @@ h2 {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  margin-bottom: 50px;
 }
 .container .activity_feed,
 .container .suggestions,
@@ -931,4 +942,442 @@ h2 {
 }
 .container .chat .form .attached_file {
   right: 13px;
+}
+
+.dialoges {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  background: #ffffff;
+  width: 100%;
+  height: 750px;
+}
+.dialoges .dialoges_list {
+  position: relative;
+  min-width: 340px;
+  width: 30%;
+  border-right: 1px solid #e5e5e5;
+}
+.dialoges .dialoges_list .dialoges_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 25px;
+  border-bottom: 1px solid #e5e5e5;
+}
+.dialoges .dialoges_list .dialoges_header .title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #667a90;
+}
+.dialoges .dialoges_list .dialoges_header .search {
+  margin-left: auto;
+}
+.dialoges .dialoges_list .dialoges_header .search,
+.dialoges .dialoges_list .dialoges_header .volume {
+  margin-right: 17px;
+}
+.dialoges .dialoges_list .dialoges_header .search,
+.dialoges .dialoges_list .dialoges_header .volume,
+.dialoges .dialoges_list .dialoges_header .notview {
+  width: 15px;
+  height: 15px;
+  cursor: pointer;
+}
+.dialoges .dialoges_list .dialoges_header .search svg,
+.dialoges .dialoges_list .dialoges_header .volume svg,
+.dialoges .dialoges_list .dialoges_header .notview svg {
+  width: 100%;
+  height: 100%;
+}
+.dialoges .dialoges_list .dialoges_header .search svg path,
+.dialoges .dialoges_list .dialoges_header .volume svg path,
+.dialoges .dialoges_list .dialoges_header .notview svg path {
+  fill: #a6bad1;
+}
+.dialoges .dialoges_list .dialoges_header .search:hover svg path,
+.dialoges .dialoges_list .dialoges_header .volume:hover svg path,
+.dialoges .dialoges_list .dialoges_header .notview:hover svg path {
+  fill: #9cb0c7;
+}
+.dialoges .dialoges_list .dialoges_users {
+  position: absolute;
+  top: 100px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+}
+.dialoges .dialoges_list .dialoges_users .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  cursor: pointer;
+  border-bottom: 1px solid #e5e5e5;
+  padding: 23px;
+  /*&:last-child {
+      border-bottom: none;
+  }*/
+}
+.dialoges .dialoges_list .dialoges_users .item.active {
+  background: #ebf4fa;
+}
+.dialoges .dialoges_list .dialoges_users .item .avatar {
+  position: relative;
+  margin-right: 13px;
+}
+.dialoges .dialoges_list .dialoges_users .item .avatar img {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dialoges .dialoges_list .dialoges_users .item .avatar .online {
+  position: absolute;
+  top: -2px;
+  right: -2px;
+  width: 8px;
+  height: 8px;
+  background: #00d905;
+  border-radius: 50%;
+}
+.dialoges .dialoges_list .dialoges_users .item .contant .name {
+  font-size: 16px;
+  font-weight: 600;
+  color: #3f4f5f;
+  margin-bottom: 5px;
+}
+.dialoges .dialoges_list .dialoges_users .item .contant .mes {
+  color: #667a90;
+}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_img,
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_mes {
+  height: 20px;
+  background: #f2f4f6;
+}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_img {
+  width: 20px;
+}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_img img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_mes {
+  padding: 0 7px;
+  border-bottom-right-radius: 7px;
+  border-top-right-radius: 7px;
+}
+.dialoges .dialoges_list .dialoges_users .item .info {
+  margin-left: auto;
+}
+.dialoges .dialoges_list .dialoges_users .item .info .date {
+  color: #b1b1b1;
+  margin-bottom: 10px;
+}
+.dialoges .dialoges_list .dialoges_users .item .info .count_mes {
+  display: inline-block;
+  float: right;
+  min-width: 23px;
+  height: 23px;
+  padding: 0 5px;
+  background: #7595b9;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 900;
+  line-height: 23px;
+  text-align: center;
+  border-radius: 2px;
+}
+.dialoges .messages {
+  position: relative;
+  width: 70%;
+}
+.dialoges .messages .messages_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 100px;
+  padding: 0 25px;
+  border-bottom: 1px solid #e5e5e5;
+  background: rgba(255, 255, 255, 0.9);
+}
+.dialoges .messages .messages_header .avatar {
+  margin-right: 8px;
+}
+.dialoges .messages .messages_header .avatar img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dialoges .messages .messages_header .user {
+  margin-right: auto;
+}
+.dialoges .messages .messages_header .user .name {
+  margin-bottom: 3px;
+  font-size: 16px;
+  font-weight: 600;
+  color: #3f4f5f;
+}
+.dialoges .messages .messages_header .user .status {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #777777;
+}
+.dialoges .messages .messages_header .user .status .mobile {
+  width: 10px;
+  height: 10px;
+  margin-right: 4px;
+}
+.dialoges .messages .messages_header .user .status .mobile svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.dialoges .messages .messages_header .user .status .mobile svg path {
+  fill: #777777;
+}
+.dialoges .messages .messages_header .add_friend,
+.dialoges .messages .messages_header .settings {
+  margin-right: 15px;
+}
+.dialoges .messages .messages_header .add_friend,
+.dialoges .messages .messages_header .settings,
+.dialoges .messages .messages_header .exit {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+.dialoges .messages .messages_header .add_friend svg,
+.dialoges .messages .messages_header .settings svg,
+.dialoges .messages .messages_header .exit svg {
+  width: 100%;
+  height: 100%;
+}
+.dialoges .messages .messages_header .add_friend svg path,
+.dialoges .messages .messages_header .settings svg path,
+.dialoges .messages .messages_header .exit svg path {
+  fill: #a6bad1;
+}
+.dialoges .messages .messages_header .add_friend:hover svg path,
+.dialoges .messages .messages_header .settings:hover svg path,
+.dialoges .messages .messages_header .exit:hover svg path {
+  fill: #9cb0c7;
+}
+.dialoges .messages .messages_header .exit svg {
+  width: 80%;
+  height: 80%;
+}
+.dialoges .messages .messages_form {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  padding: 25px 20px 20px 20px;
+  background: #f2f4f6;
+  border-top: 1px solid #e5e5e5;
+}
+.dialoges .messages .messages_form .form_input {
+  width: 100%;
+}
+.dialoges .messages .messages_form .form_input input {
+  display: block;
+  width: 100%;
+  height: 50px;
+  padding: 15px;
+  margin-bottom: 10px;
+  border: 1px solid #e5e5e5;
+  font-size: 16px;
+  color: #727272;
+}
+.dialoges .messages .messages_form .form_input .input_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+.dialoges .messages .messages_form .form_input .input_menu .smile {
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
+  margin-right: 13px;
+}
+.dialoges .messages .messages_form .form_input .input_menu .smile svg {
+  width: 100%;
+  height: 100%;
+}
+.dialoges .messages .messages_form .form_input .input_menu .smile svg path {
+  fill: #a6bad1;
+}
+.dialoges .messages .messages_form .form_input .input_menu .last_smile {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-left: 1px solid #e5e5e5;
+  padding-left: 13px;
+}
+.dialoges .messages .messages_form .form_input .input_menu .last_smile img {
+  cursor: pointer;
+  display: block;
+  width: 18px;
+  height: 18px;
+  margin-right: 10px;
+}
+.dialoges .messages .messages_form .form_input .input_menu .attach {
+  position: relative;
+  margin-left: auto;
+  color: #2b587a;
+  cursor: pointer;
+  padding-right: 15px;
+}
+.dialoges .messages .messages_form .form_input .input_menu .attach svg {
+  position: absolute;
+  top: 5px;
+  right: 0;
+  width: 8px;
+}
+.dialoges .messages .messages_form .form_input .input_menu .attach svg polygon {
+  fill: #a6bad1;
+}
+.dialoges .messages .messages_form .form_send {
+  margin-left: 15px;
+}
+.dialoges .messages .messages_form .form_send a.button {
+  width: 120px;
+}
+.dialoges .messages .messages_user .item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  margin: 15px 20px 35px 20px;
+}
+.dialoges .messages .messages_user .item.left .mes {
+  background: #f2f4f6;
+}
+.dialoges .messages .messages_user .item.left .mes .date {
+  left: 0;
+}
+.dialoges .messages .messages_user .item.left .mes:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #f2f4f6;
+  border-left: 30px solid transparent;
+}
+.dialoges .messages .messages_user .item.left .avatar {
+  margin-right: 15px;
+}
+.dialoges .messages .messages_user .item.right {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+      -ms-flex-direction: row-reverse;
+          flex-direction: row-reverse;
+}
+.dialoges .messages .messages_user .item.right .mes {
+  background: #ebf4fa;
+}
+.dialoges .messages .messages_user .item.right .mes .date {
+  right: 0;
+}
+.dialoges .messages .messages_user .item.right .mes:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #ebf4fa;
+  border-right: 30px solid transparent;
+}
+.dialoges .messages .messages_user .item.right .avatar {
+  margin-left: 15px;
+}
+.dialoges .messages .messages_user .item .avatar img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+.dialoges .messages .messages_user .item .mes {
+  position: relative;
+  max-width: 70%;
+  padding: 15px;
+  border-radius: 10px;
+  color: #667a90;
+  line-height: 22px;
+}
+.dialoges .messages .messages_user .item .mes img {
+  display: inline-block;
+  width: 150px;
+  height: 150px;
+  margin-right: 8px;
+  border-radius: 3px;
+}
+.dialoges .messages .messages_user .item .mes img:last-child {
+  margin-right: 0;
+}
+.dialoges .messages .messages_user .item .mes .date {
+  position: absolute;
+  bottom: -23px;
+  font-size: 12px;
+  color: #b1b1b1;
 }
