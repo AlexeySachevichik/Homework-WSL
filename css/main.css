@@ -111,7 +111,10 @@ html {
 .header .header_top .header_message .notice,
 .header .header_top .header_search .notice,
 .header .header_top .header_exit .notice, .header .header_menu a, .button, .container .activity_feed .show_more,
-.container .suggestions .show_more, .container .activity_feed .settings, .container .suggestions .content .item .user_add .add {
+.container .suggestions .show_more, .container .activity_feed .settings svg path, .container .suggestions .content .item .user_add .add, .container .chat .chat_header .settings svg path,
+.container .chat .chat_header .resize svg path,
+.container .chat .chat_header .exit svg path, .container .chat .form .attached_file,
+.container .chat .form .smile {
   -webkit-transition-duration: 0.2s;
           transition-duration: 0.2s;
 }
@@ -678,5 +681,254 @@ h2 {
   background: #fafafa;
 }
 .container .chat {
+  position: relative;
   width: 30.4%;
+}
+.container .chat .chat_window {
+  position: absolute;
+  top: 50px;
+  bottom: 50px;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
+.container .chat .chat_window .item {
+  position: relative;
+  padding: 13px 23px;
+  margin-bottom: 45px;
+  border-radius: 13px;
+}
+.container .chat .chat_window .item.left .date, .container .chat .chat_window .item.right .date {
+  position: absolute;
+  color: #b1b1b1;
+  font-size: 9px;
+}
+.container .chat .chat_window .item.left .date {
+  left: 0;
+}
+.container .chat .chat_window .item.right .date {
+  right: 0;
+}
+.container .chat .chat_window .item .date {
+  position: absolute;
+  color: #b1b1b1;
+  bottom: -23px;
+  font-size: 9px;
+}
+.container .chat .chat_window .item.left {
+  display: inline-block;
+  margin-left: 30px;
+  margin-right: 60px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  background: #f2f4f6;
+  color: #667a90;
+}
+.container .chat .chat_window .item.left:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: -15px;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #f2f4f6;
+  border-left: 30px solid transparent;
+}
+.container .chat .chat_window .item.right {
+  display: inline-block;
+  margin-left: 60px;
+  margin-right: 30px;
+  background: #ebf4fa;
+  color: #667a90;
+}
+.container .chat .chat_window .item.right:before {
+  content: '';
+  display: block;
+  position: absolute;
+  bottom: 0;
+  right: -15px;
+  width: 0;
+  height: 0;
+  border-bottom: 30px solid #ebf4fa;
+  border-right: 30px solid transparent;
+}
+.container .chat .chat_window .item .error {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: -8px;
+  left: -3px;
+  width: 15px;
+  height: 15px;
+  background: #ff6161;
+  border-radius: 50%;
+}
+.container .chat .chat_window .item .error svg {
+  width: 80%;
+  height: 80%;
+}
+.container .chat .chat_window .item .error svg path {
+  fill: #ffffff;
+}
+.container .chat .chat_window .sparator_date {
+  position: relative;
+  margin-bottom: 20px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 12px;
+  color: #b1b1b1;
+  background: #ffffff;
+}
+.container .chat .chat_window .sparator_date:before, .container .chat .chat_window .sparator_date:after {
+  position: absolute;
+  top: 9px;
+  content: '';
+  display: block;
+  width: 70px;
+  height: 1px;
+  background: #e5e5e5;
+}
+.container .chat .chat_window .sparator_date:before {
+  left: 30px;
+}
+.container .chat .chat_window .sparator_date:after {
+  right: 30px;
+}
+.container .chat .chat_header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 50px;
+  padding: 0 25px;
+  background: #4d75a3;
+}
+.container .chat .chat_header .avatar {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  overflow: hidden;
+  margin-right: 10px;
+}
+.container .chat .chat_header .avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.container .chat .chat_header .name {
+  position: relative;
+  color: #ffffff;
+  font-size: 16px;
+}
+.container .chat .chat_header .name .online {
+  position: absolute;
+  top: 7px;
+  right: -15px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #ffffff;
+}
+.container .chat .chat_header .settings,
+.container .chat .chat_header .resize,
+.container .chat .chat_header .exit {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: flex-end;
+          flex-direction: flex-end;
+  flex-content: flex-end;
+  width: 10px;
+  width: 10px;
+  cursor: pointer;
+}
+.container .chat .chat_header .settings svg,
+.container .chat .chat_header .resize svg,
+.container .chat .chat_header .exit svg {
+  width: 100%;
+  height: 100%;
+}
+.container .chat .chat_header .settings svg path,
+.container .chat .chat_header .resize svg path,
+.container .chat .chat_header .exit svg path {
+  fill: #bcccdc;
+}
+.container .chat .chat_header .settings:hover svg path,
+.container .chat .chat_header .resize:hover svg path,
+.container .chat .chat_header .exit:hover svg path {
+  fill: #b2c2d2;
+}
+.container .chat .chat_header .settings,
+.container .chat .chat_header .resize {
+  margin-right: 13px;
+}
+.container .chat .chat_header .settings {
+  margin-left: auto;
+}
+.container .chat .form {
+  position: absolute;
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.container .chat .form textarea {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 13px 45px;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  resize: none;
+  font-size: 18px;
+  color: #8f9dae;
+  /*overflow: hidden;*/
+}
+.container .chat .form .attached_file,
+.container .chat .form .smile {
+  position: absolute;
+  top: 15px;
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+.container .chat .form .attached_file svg path,
+.container .chat .form .smile svg path {
+  fill: #a6bad1;
+}
+.container .chat .form .attached_file:hover svg path,
+.container .chat .form .smile:hover svg path {
+  fill: #9cb0c7;
+}
+.container .chat .form .smile {
+  left: 13px;
+}
+.container .chat .form .attached_file {
+  right: 13px;
 }
