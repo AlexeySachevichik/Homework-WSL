@@ -13,9 +13,10 @@ html{-webkit-box-sizing:border-box;box-sizing:border-box;-ms-overflow-style:scro
 @font-face{font-family:OpenSans;font-style:normal;font-weight:300;src:url(../fonts/OpenSans-Light.ttf) format("truetype")}
 @font-face{font-family:OpenSans;font-style:normal;font-weight:400;src:url(../fonts/OpenSans-Regular.ttf) format("truetype")}
 @font-face{font-family:OpenSans;font-style:normal;font-weight:600;src:url(../fonts/OpenSans-SemiBold.ttf) format("truetype")}
-.container .activity_feed,.container .chat,.container .suggestions,.header,.profile{-webkit-box-shadow:0 2px 4px rgba(0,0,0,.1);box-shadow:0 2px 4px rgba(0,0,0,.1)}
-.button,.container .activity_feed,.container .activity_feed .content .item .description .image a,.container .activity_feed .content .item .description .link .image_link,.container .chat,.container .suggestions,.container .suggestions .content .item .user_add .add,.header,.profile{border-radius:5px;overflow:hidden}
-.button,.container .activity_feed .settings svg path,.container .activity_feed .show_more,.container .chat .chat_header .exit svg path,.container .chat .chat_header .resize svg path,.container .chat .chat_header .settings svg path,.container .chat .form .attached_file,.container .chat .form .smile,.container .suggestions .content .item .user_add .add,.container .suggestions .show_more,.header .header_menu a,.header .header_top .header_bell .notice,.header .header_top .header_exit .notice,.header .header_top .header_friends .notice,.header .header_top .header_message .notice,.header .header_top .header_search .notice,.header .header_top a{-webkit-transition-duration:.2s;transition-duration:.2s}
+@font-face{font-family:OpenSans;font-style:normal;font-weight:900;src:url(../fonts/OpenSans-Bold.ttf) format("truetype")}
+.container .activity_feed,.container .chat,.container .suggestions,.dialoges,.header,.profile{-webkit-box-shadow:0 2px 4px rgba(0,0,0,.1);box-shadow:0 2px 4px rgba(0,0,0,.1)}
+.button,.container .activity_feed,.container .activity_feed .content .item .description .image a,.container .activity_feed .content .item .description .link .image_link,.container .chat,.container .suggestions,.container .suggestions .content .item .user_add .add,.dialoges,.header,.profile{border-radius:5px;overflow:hidden}
+.button,.container .activity_feed .settings svg path,.container .activity_feed .show_more,.container .chat .chat_header .exit svg path,.container .chat .chat_header .resize svg path,.container .chat .chat_header .settings svg path,.container .chat .form .attached_file,.container .chat .form .smile,.container .suggestions .content .item .user_add .add,.container .suggestions .show_more,.dialoges .dialoges_list .dialoges_header .notview svg path,.dialoges .dialoges_list .dialoges_header .search svg path,.dialoges .dialoges_list .dialoges_header .volume svg path,.header .header_menu a,.header .header_top .header_bell .notice,.header .header_top .header_exit .notice,.header .header_top .header_friends .notice,.header .header_top .header_message .notice,.header .header_top .header_search .notice,.header .header_top a{-webkit-transition-duration:.2s;transition-duration:.2s}
 body{font-family:OpenSans,Arial,sans-serif;font-size:14px;font-weight:400;line-height:18px;background:#e9e8e4;color:#727272;padding-top:120px;padding-bottom:120px}
 h2{font-size:24px;font-weight:300;color:#000}
 .wrapper{margin:0 auto;min-width:360px;max-width:1150px;width:100%}
@@ -65,7 +66,7 @@ h2{font-size:24px;font-weight:300;color:#000}
 .profile .profile_status .item .title{margin-bottom:10px;font-size:24px;font-weight:600;color:#4d75a3}
 .profile .profile_status .item .description{color:#667a90}
 .profile .profile_button{margin-left:5px}
-.container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between}
+.container{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;margin-bottom:50px}
 .container .activity_feed,.container .chat,.container .suggestions{background:#fff}
 .container .activity_feed,.container .suggestions{position:relative;padding-bottom:60px}
 .container .activity_feed h2,.container .suggestions h2{margin:30px 25px 40px 25px}
@@ -145,3 +146,30 @@ h2{font-size:24px;font-weight:300;color:#000}
 .container .chat .form .attached_file:hover svg path,.container .chat .form .smile:hover svg path{fill:#9cb0c7}
 .container .chat .form .smile{left:13px}
 .container .chat .form .attached_file{right:13px}
+.dialoges{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;background:#fff;width:100%;height:750px}
+.dialoges .dialoges_list{position:relative;min-width:340px;width:30%;border-right:1px solid #e5e5e5}
+.dialoges .dialoges_list .dialoges_header{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-pack:justify;-ms-flex-pack:justify;justify-content:space-between;-webkit-box-align:center;-ms-flex-align:center;align-items:center;position:absolute;top:0;left:0;right:0;width:100%;height:100px;padding:0 25px;border-bottom:1px solid #e5e5e5}
+.dialoges .dialoges_list .dialoges_header .title{font-size:16px;font-weight:600;color:#667a90}
+.dialoges .dialoges_list .dialoges_header .search{margin-left:auto}
+.dialoges .dialoges_list .dialoges_header .search,.dialoges .dialoges_list .dialoges_header .volume{margin-right:17px}
+.dialoges .dialoges_list .dialoges_header .notview,.dialoges .dialoges_list .dialoges_header .search,.dialoges .dialoges_list .dialoges_header .volume{width:15px;height:15px;cursor:pointer}
+.dialoges .dialoges_list .dialoges_header .notview svg,.dialoges .dialoges_list .dialoges_header .search svg,.dialoges .dialoges_list .dialoges_header .volume svg{width:100%;height:100%}
+.dialoges .dialoges_list .dialoges_header .notview svg path,.dialoges .dialoges_list .dialoges_header .search svg path,.dialoges .dialoges_list .dialoges_header .volume svg path{fill:#a6bad1}
+.dialoges .dialoges_list .dialoges_header .notview:hover svg path,.dialoges .dialoges_list .dialoges_header .search:hover svg path,.dialoges .dialoges_list .dialoges_header .volume:hover svg path{fill:#9cb0c7}
+.dialoges .dialoges_list .dialoges_users{position:absolute;top:100px;left:0;right:0;bottom:0;width:100%}
+.dialoges .dialoges_list .dialoges_users .item{display:-webkit-box;display:-ms-flexbox;display:flex;cursor:pointer;border-bottom:1px solid #e5e5e5;padding:23px}
+.dialoges .dialoges_list .dialoges_users .item.active{background:#ebf4fa}
+.dialoges .dialoges_list .dialoges_users .item .avatar{position:relative;margin-right:13px}
+.dialoges .dialoges_list .dialoges_users .item .avatar img{width:50px;height:50px;border-radius:50%}
+.dialoges .dialoges_list .dialoges_users .item .avatar .online{position:absolute;top:-2px;right:-2px;width:8px;height:8px;background:#00d905;border-radius:50%}
+.dialoges .dialoges_list .dialoges_users .item .contant .name{font-size:16px;font-weight:600;color:#3f4f5f;margin-bottom:5px}
+.dialoges .dialoges_list .dialoges_users .item .contant .mes{color:#667a90}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote{display:-webkit-box;display:-ms-flexbox;display:flex;-webkit-box-align:center;-ms-flex-align:center;align-items:center}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_img,.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_mes{height:20px;background:#f2f4f6}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_img{width:20px}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_img img{width:100%;height:100%;border-radius:50%}
+.dialoges .dialoges_list .dialoges_users .item .contant .quote .quote_mes{padding:0 7px;border-bottom-right-radius:7px;border-top-right-radius:7px}
+.dialoges .dialoges_list .dialoges_users .item .info{margin-left:auto}
+.dialoges .dialoges_list .dialoges_users .item .info .date{color:#b1b1b1;margin-bottom:10px}
+.dialoges .dialoges_list .dialoges_users .item .info .count_mes{display:inline-block;float:right;min-width:23px;height:23px;padding:0 5px;background:#7595b9;color:#fff;font-size:12px;font-weight:900;line-height:23px;text-align:center;border-radius:2px}
+.dialoges .messages{width:70%}

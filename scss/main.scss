@@ -10,6 +10,7 @@ $back_5: #e0e0e0;
 $back_6: #ebf4fa;
 $back_7: #b1b1b1;
 
+
 $font_1: #727272;
 $font_2: #303030;
 $font_3: #97a4b1;
@@ -369,6 +370,7 @@ h2 {
 .container {
     display: flex;
     justify-content: space-between;
+    margin-bottom: 50px;
 
     .activity_feed,
     .suggestions,
@@ -905,5 +907,193 @@ h2 {
                 right: 13px;
             }
         }
+    }
+}
+
+.dialoges {
+    @extend %block_radius;
+    @extend %shadow;
+
+    display: flex;
+    justify-content: space-between;
+    background: $back_2;
+    width: 100%;
+    height: 750px;
+
+    .dialoges_list {
+        position: relative;
+        min-width: 340px;
+        width: 30%;
+        border-right: 1px solid $back_3;
+
+        .dialoges_header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            width: 100%;
+            height: 100px;
+            padding: 0 25px;
+
+            border-bottom: 1px solid $back_3;
+
+            .title {
+                font-size: 16px;
+                font-weight: 600;
+                color: $font_4;
+            }
+
+            .search {
+                margin-left: auto;
+            }
+
+            .search,
+            .volume {
+                margin-right: 17px;
+            }
+
+            .search,
+            .volume,
+            .notview {
+
+                width: 15px;
+                height: 15px;
+                cursor: pointer;
+
+                svg {
+                    width: 100%;
+                    height: 100%;
+
+                    path {
+                        @extend %animation;
+                        fill: $acent_3;
+                    }
+                }
+
+                &:hover svg path {
+                    fill: $acent_3 - 10;
+                }
+            }
+        }
+
+        .dialoges_users {
+            position: absolute;
+            top: 100px;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            width: 100%;
+
+            .item {
+                display: flex;
+                cursor: pointer;
+
+                border-bottom: 1px solid $back_3;
+                padding: 23px;
+
+                /*&:last-child {
+                    border-bottom: none;
+                }*/
+
+                &.active {
+                    background: $back_6;
+                }
+
+                .avatar {
+                    position: relative;
+                    margin-right: 13px;
+
+                    img {
+                        width: 50px;
+                        height: 50px;
+                        border-radius: 50%;
+                    }
+
+                    .online {
+                        position: absolute;
+                        top: -2px;
+                        right: -2px;
+                        width: 8px;
+                        height: 8px;
+                        background: $acent_8;
+                        border-radius: 50%;
+                    }
+                }
+
+                .contant {
+
+                    .name {
+                        font-size: 16px;
+                        font-weight: 600;
+                        color: $acent_5;
+                        margin-bottom: 5px;
+                    }
+
+                    .mes {
+                        color: $font_4;
+                    }
+
+                    .quote {
+                        display: flex;
+                        align-items: center;
+
+                        .quote_img,
+                        .quote_mes {
+                            height: 20px;
+                            background: $acent_12;
+                        }
+
+                        .quote_img {
+                            width: 20px;
+
+                            img {
+                                width: 100%;
+                                height: 100%;
+                                border-radius: 50%;
+                            }
+                        }
+
+                        .quote_mes {
+                            padding: 0 7px;
+                            border-bottom-right-radius: 7px;
+                            border-top-right-radius: 7px;
+                        }
+                    }
+                }
+
+                .info {
+                    margin-left: auto;
+
+                    .date {
+                        color: $back_7;
+                        margin-bottom: 10px;
+                    }
+
+                    .count_mes {
+                        display: inline-block;
+                        float: right;
+                        min-width: 23px;
+                        height: 23px;
+                        padding: 0 5px;
+                        background: $acent_7;
+                        color: $back_2;
+                        font-size: 12px;
+                        font-weight: 900;
+                        line-height: 23px;
+                        text-align: center;
+                        border-radius: 2px;
+
+                    }
+                }
+            }
+        }
+    }
+
+    .messages {
+        width: 70%;
     }
 }
